@@ -4,9 +4,9 @@
 
 Name: jboss-jstl-1.2-api
 Version: 1.0.3
-Release: 7.0%{?dist}
+Release: 10.1
 Summary: JSP Standard Template Library 1.2 API
-
+Group:   Development/Java
 License: CDDL or GPLv2 with exceptions
 URL: http://www.jboss.org
 
@@ -65,37 +65,17 @@ This package contains the API documentation for %{name}.
 
 
 %build
-mvn-rpmbuild install javadoc:aggregate
-
+%mvn_build
 
 %install
+%mvn_install
 
-# Jar files:
-install -d -m 755 %{buildroot}%{_javadir}
-install -pm 644 target/jboss-jstl-api_1.2_spec-%{namedversion}.jar %{buildroot}%{_javadir}/%{name}.jar
-
-# POM files:
-install -d -m 755 %{buildroot}%{_mavenpomdir}
-install -pm 644 pom.xml %{buildroot}%{_mavenpomdir}/JPP-%{name}.pom
-
-# Dependencies map:
-%add_maven_depmap JPP-%{name}.pom %{name}.jar
-
-# Javadoc files:
-install -d -m 755 %{buildroot}%{_javadocdir}/%{name}
-cp -rp target/site/apidocs/* %{buildroot}%{_javadocdir}/%{name}
-
-
-%files
-%{_javadir}/*
-%{_mavenpomdir}/*
-%{_mavendepmapfragdir}/*
+%files -f .mfiles
 %doc LICENSE
 %doc README
 
 
-%files javadoc
-%{_javadocdir}/%{name}
+%files javadoc -f .mfiles-javadoc
 %doc LICENSE
 %doc README
 
