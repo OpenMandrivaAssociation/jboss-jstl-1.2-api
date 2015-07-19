@@ -4,7 +4,7 @@
 
 Name: jboss-jstl-1.2-api
 Version: 1.0.3
-Release: 10.1
+Release: 10.2
 Summary: JSP Standard Template Library 1.2 API
 Group:   Development/Java
 License: CDDL or GPLv2 with exceptions
