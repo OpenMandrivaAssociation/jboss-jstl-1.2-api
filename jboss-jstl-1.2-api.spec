@@ -8,7 +8,7 @@ Release: 10.3
 Summary: JSP Standard Template Library 1.2 API
 Group:   Development/Java
 License: CDDL or GPLv2 with exceptions
-URL: http://www.jboss.org
+URL: https://www.jboss.org
 
 # git clone git://github.com/jboss/jboss-jstl-api_spec.git jboss-jstl-1.2-api
 # cd jboss-jstl-1.2-api/ && git archive --format=tar --prefix=jboss-jstl-1.2-api-1.0.3.Final/ jboss-jstl-api_1.2_spec-1.0.3.Final | xz > jboss-jstl-1.2-api-1.0.3.Final.tar.xz
